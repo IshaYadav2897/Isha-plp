@@ -1,0 +1,31 @@
+<h3>Search Cafe by Id</h3>
+
+<form (ngSubmit)="searchCafe()">
+  <div class="form group">
+    <label>Enter Cafe Id: </label><br>
+    <input type="number" [(ngModel)]=id name="id"><br><br> 
+  </div>
+  <div class="form group">
+    <button type="submit" class="btn btn-success">Search Cafe</button>
+  </div>
+</form>
+
+<div [hidden]="!found">
+    <h3>{{error}}</h3>
+<table class="table table-bordered">
+  <tr>
+    <th>Cafe Id</th>
+    <th>Cafe Name</th>
+    <th>Cafe Location</th>
+    <th>Cafe Owner</th>
+    <th>Cafe Rating</th>
+  </tr>
+  <tr>
+    <td>{{cafedetail.cafeId}}</td>
+    <td>{{cafedetail.cafeName}}</td>
+    <td>{{cafedetail.cafeLocation}}</td>
+    <td>{{cafedetail.cafeOwner}}</td>
+    <td>{{cafedetail.cafeRating}}</td>
+  </tr>
+</table>
+</div> 

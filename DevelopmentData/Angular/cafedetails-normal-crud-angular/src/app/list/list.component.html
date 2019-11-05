@@ -1,0 +1,20 @@
+<h3 style="text-align: center; color: rgb(61, 59, 59);">List of all cafes</h3> <br>
+
+<table class="table table-bordered">
+  <tr>
+    <th>Cafe Id</th>
+    <th>Cafe Name</th>
+    <th>Cafe Location</th>
+    <th>Cafe Owner</th>
+    <th>Cafe Rating</th>
+    <th>Action</th>
+  </tr>
+  <tr *ngFor="let cafe of cafedetails; let i of index">
+    <td>{{cafe.cafeId}}</td>
+    <td>{{cafe.cafeName}}</td>
+    <td>{{cafe.cafeLocation}}</td>
+    <td>{{cafe.cafeOwner}}</td>
+    <td>{{cafe.cafeRating}}</td>
+    <td><button class="btn btn-warning" (click)="delete(i)">Delete</button></td>
+  </tr>
+</table>
