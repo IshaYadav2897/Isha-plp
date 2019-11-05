@@ -93,7 +93,7 @@ public class CafeDetailsServiceImpl implements CafeDetailsService {
 
 	@Override
 	public List<CafeDetails> fetchCafeDetailsByLocation(String location) throws CafeDetailsNotFoundException {
-			if(cafeDetailsRepo.fetchCafeDetailsByLocation(location)==null)
+			if(cafeDetailsRepo.fetchCafeDetailsByLocation(location)==null || cafeDetailsRepo.fetchCafeDetailsByLocation(location).size()==0)
 				throw new CafeDetailsNotFoundException("No Cafe found for this Location: " + location);
 			return cafeDetailsRepo.fetchCafeDetailsByLocation(location);
 	}
@@ -126,6 +126,11 @@ public class CafeDetailsServiceImpl implements CafeDetailsService {
 	public List<CafeDetails> sortCafeDetailsByRating() {
 		return cafeDetailsRepo.sortCafeDetailsByRating();
 	}
+	
+	@Override
+	public List<String> fetchUniqueCafeLocation() {
+		return cafeDetailsRepo.fetchUniqueCafeLocation();
+	}
 
 	@Override
 	public int updateCafeName(String name, int id) throws CafeDetailsNotFoundException {
@@ -134,5 +139,7 @@ public class CafeDetailsServiceImpl implements CafeDetailsService {
 			throw new CafeDetailsNotFoundException("Invalid Cafe Details are provided.");
 		return 1;
 	}
+
+	
 
 }

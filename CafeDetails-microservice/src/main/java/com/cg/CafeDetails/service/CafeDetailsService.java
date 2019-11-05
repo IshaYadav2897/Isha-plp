@@ -32,6 +32,8 @@ public interface CafeDetailsService {
 	
 	List<CafeDetails> sortCafeDetailsByRating();
 	
+	List<String> fetchUniqueCafeLocation();
+	
 	int updateCafeName(String name, int id) throws CafeDetailsNotFoundException;
 	
 	

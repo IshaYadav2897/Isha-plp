@@ -12,5 +12,7 @@ public class CafeDetailsMicroserviceApplicationTests {
 	@Test
 	public void contextLoads() {
 	}
+	
+	
 
 }

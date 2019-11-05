@@ -87,6 +87,11 @@ public class CafeDetailsController {
 		return service.sortCafeDetailsByRating();
 	}
 	
+	@GetMapping(value = "/uniqueLocation", produces = "application/json")
+	public List<String> fetchUniqueCafeLocation() {
+		return service.fetchUniqueCafeLocation();
+	}
+	
 	@PutMapping(value = "/updateName/{id}/{name}", produces = "application/json")
 	public int updateCafeName(@PathVariable int id, @PathVariable String name) throws CafeDetailsNotFoundException {
 		return service.updateCafeName(name, id);

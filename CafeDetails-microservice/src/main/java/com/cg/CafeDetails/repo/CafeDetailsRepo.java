@@ -28,6 +28,9 @@ public interface CafeDetailsRepo extends JpaRepository<CafeDetails, Integer>{
 	@Query("SELECT c FROM CafeDetails c ORDER BY c.cafeRating DESC")
 	List<CafeDetails> sortCafeDetailsByRating();
 	
+	@Query("SELECT DISTINCT c.cafeLocation FROM CafeDetails c")
+	List<String> fetchUniqueCafeLocation();
+	
 	@Modifying
 	@Query("UPDATE CafeDetails c SET c.cafeName=:name WHERE c.cafeId=:id")
 	int updateCafeName(String name, int id);
